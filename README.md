@@ -168,15 +168,15 @@ type: "SearchResultClick",    /!* 字符串，目标元素匹配字段字段,ata
 			container:".page__content .collection",
 			type:"SearchRequest",
 			getSessionId:"sensorsSearchRequesth",
-  		setSessionId: "sensorsSearchResultClick",
+      setSessionId: "sensorsSearchResultClick",
 			delSession:true, /*获取上报完毕后删除session，避免重复提交，默认为false不删除*/
-  		customSession:function (container) {
-				let newData={};
-				newData=JSON.parse(sessionStorage.getItem('sensorsSearchRequesth'));
+      customSession:function (container) {
+        let newData={};
+        newData=JSON.parse(sessionStorage.getItem('sensorsSearchRequesth'));
         /*获取sensorsSearchRequesth 转存入 sensorsSearchResultClick */
-				return newData;
+        return newData;
       }
-		})
+   })
    ```
 + 单按钮有两个上报事件，使用自定义扩展
    ```html
