@@ -232,3 +232,21 @@ type: "SearchResultClick",    /!* 字符串，目标元素匹配字段字段,ata
       dataName:"scdata2"  /*匹配自定义值属性上报*/
    })
    ```
++ 上报一次后停止上报，输入框更新后，重新允许上报   
+     ```html
+   <div class="search-bar">
+      <input type="text" class="username">
+      <button  type="submit"
+         data-scenable="1"
+         data-sctype="SearchRequest"
+         data-scdata='{"result_number":"{{ search.results_count }}"}'
+      >这是一个需要上报的标签</button>
+   </div>
+   ```
+   ```javascript
+   let login=new sadhus_shence({
+                container:".search-bar",
+                type:"SearchRequest"
+              })
+   document.querySelector('.search-bar>input').addEventListener('change',login.updateFn)
+   ```
