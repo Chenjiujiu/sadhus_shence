@@ -38,7 +38,10 @@
           this.debug && console.info("页面加载完毕");
           this.handle(this.container);
         })
-      }else{
+      }else if(this.event==='sync'){
+        this.debug && console.info("同步执行事件");
+        this.handle(this.container);
+      } else{
         this.debug && console.info("绑定事件",this.event);
         this.container.addEventListener(this.event,(ev)=>{
           this.debug&&ev.preventDefault();
