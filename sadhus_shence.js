@@ -5,7 +5,11 @@
 ~function () {
   class sadhus_shence{
     constructor(obj) {
-      this.container=document.querySelector(obj.container);
+      if(typeof (obj.container)==='string'){
+        this.container=document.querySelector(obj.container);
+      }else{
+        this.container=obj.container;
+      }
       this.event=obj.event||'click';
       this.addFn=obj.customData||function (){return {}};
       this.customSession=obj.customSession||function (){return {}};
@@ -41,7 +45,29 @@
       }else if(this.event==='sync'){
         this.debug && console.info("同步执行事件");
         this.handle(this.container);
-      } else{
+      }else if(this.event==='repeat'){
+       let domList=this.container.querySelectorAll(this.type);
+       let that=this;
+       domList.forEach(item=>{
+         new sadhus_shence({
+           debug:that.debug,
+           container:item,
+           event:"sync",
+           type:that.type,
+           addFn:that.addFn,
+           customSession:that.customSession,
+           sendType:that.sendType,
+           callback:that.callback,
+           setSessionId:that.setSessionId,
+           getSessionId:that.getSessionId,
+           delSession:that.delSession,
+           scTypeName:that.scTypeName,
+           scDataName:that.scDataName,
+           scEnableName:that.scEnableName,
+           scSessionName:that.scSessionName
+         })
+       })
+      }else{
         this.debug && console.info("绑定事件",this.event);
         this.container.addEventListener(this.event,(ev)=>{
           this.debug&&ev.preventDefault();
