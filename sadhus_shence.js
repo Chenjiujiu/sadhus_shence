@@ -91,6 +91,12 @@
         if(data.current_price){
           data.current_price=Number((data.current_price/100).toFixed(2));
         }
+        if(data.discount_price){
+          data.discount_price=Number((data.discount_price/100).toFixed(2));
+        }
+        if(data.bonus_amount){
+          data.bonus_amount=Number((data.bonus_amount/100).toFixed(2));
+        }
         if(data.result_number){
           data.result_number=Number(data.result_number);
         }

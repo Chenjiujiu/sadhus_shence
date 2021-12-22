@@ -1,6 +1,12 @@
 #神策数据埋点函数声明
-@Version  v5.0  
+@Version  v6.0  
 @Author   苦行僧|2021/12/17
+##6.0 
+- 新增repeat 上报事件，打开页面后，所有匹配到节点，每个节点进行一次上报  
+- 新增sync 上报事件，同步执行上报，创建实例后立即进行上报  
+- 新增价格计算类型；discount_price/bonus_amount 
+- 修改load事件bug，
+- 注意：load 与sync 事件 container为绑定数据的容器，其余事件container为父级或者祖级容器
 ##函数调用
 1. 基本使用
 ```javascript
