@@ -170,7 +170,7 @@
     }
     updateFn(){
       let EnableName=this.scEnableName;
-      let scDemoArr= this.container.document.querySelectorAll("[data-"+this.scTypeName+"="+this.type+"]");
+      let scDemoArr= this.container.querySelectorAll("[data-"+this.scTypeName+"="+this.type+"]");
       Array.from(scDemoArr).forEach(item=> item.dataset[EnableName]='1');
       this.debug&&console.info("重置可用性")
     }
