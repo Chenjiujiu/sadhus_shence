@@ -54,7 +54,7 @@
            container:item,
            event:"sync",
            type:that.type,
-           addFn:that.addFn,
+           customData:that.addFn,
            customSession:that.customSession,
            sendType:that.sendType,
            callback:that.callback,
