@@ -109,8 +109,8 @@
       this.debug && console.info("合并数据",data);
       return data;
     }
-    addData(data){
-      let customData=this.addFn(this.container);
+    addData(data,el){
+      let customData=this.addFn(this.container,el);
       this.debug && console.info("自定义追加数据",customData);
       Object.assign(data,customData)
       this.debug && console.info("追加数据");

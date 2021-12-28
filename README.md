@@ -1,6 +1,11 @@
 #神策数据埋点函数声明
-@Version  v6.0  
-@Author   苦行僧|2021/12/17
+@Version  v6.1
+@Author   苦行僧|2021/12/28
+##6.1
+- 新增自定义添加数据函数参数,第二参数为当前点击匹配到的节点
+  ```javascript
+  customData function(container,el){return {}}  /!* el为当前匹配节点 *!/
+  ```
 ##6.0 
 - 新增repeat 上报事件，打开页面后，所有匹配到节点，每个节点进行一次上报  
 - 新增sync 上报事件，同步执行上报，创建实例后立即进行上报  
